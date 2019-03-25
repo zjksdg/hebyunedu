@@ -1,0 +1,21 @@
+// ==UserScript==
+// @name 河北云教育挂课加速器
+// @namespace Violentmonkey Scripts
+// @match http://www.hebyunedu.com/lms/learning/courseware/*
+// @require https://code.jquery.com/jquery-latest.js
+// @grant none
+// ==/UserScript==
+(function(){
+  'use strict';
+  alert("dfdfd");
+  $("#tsinfo2").html("<h1>你正在加速挂课，已挂课<span id='pastm' style='color:#f00'>1</span>分钟</h1><br/><br/><h2>注意：学习时长达到要求时关闭此页面标签即可。</h2>");
+  showdiv2();
+  var pt=1;
+  function pasttime(){
+    pt=pt+1;
+    $("#pastm").text(pt);
+  }
+  setInterval(pasttime,1000);
+  setInterval(learningSave,1000);
+}
+)();
